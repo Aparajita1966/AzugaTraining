@@ -4,6 +4,7 @@ import org.json.JSONException;
 import org.json.JSONObject;
 public class BasketBallApi {
 
+    public static final String CSV = ".csv";
     private static final String BASE_URL = "https://www.balldontlie.io/api/v1";
     private static final String PLAYERS_URL = "/players";
     private static final String PATH = "/Users/aparajita/Documents/";
@@ -17,7 +18,7 @@ public class BasketBallApi {
     public static void getPlayersData() throws JSONException {
         String response = HttpClient.sendGET(BASE_URL + PLAYERS_URL);
         if( null != response){
-            getAllData(response, "players.csv");
+            getAllData(response, "players");
         }
     }
 
@@ -38,6 +39,9 @@ public class BasketBallApi {
     private static void getAllData(String response, String path) throws JSONException {
         JSONObject jsonObject = new JSONObject(response);
         JSONArray docs = jsonObject.getJSONArray("data");
-        JsonToCsv.jsonToCSV(docs, PATH + path);
+        JsonToCsv.jsonToCSV(docs, PATH + path + CSV);
+        Convertor.convertToPDF(PATH + path +CSV, PATH + path + ".pdf");
+        Convertor.converToXls(PATH + path +CSV, PATH + path + ".xls");
+        Convertor.convertToHtml(PATH + path +CSV, PATH + path + ".html");
     }
 }

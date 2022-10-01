@@ -11,9 +11,15 @@ import java.util.Collections;
 import java.util.List;
 import java.util.stream.Collectors;
 
+/*
+ * Copyright (c) 2022.  - All Rights Reserved
+ *  * Unauthorized copying or redistribution of this file in source and binary forms via any medium
+ *  * is strictly prohibited-
+ *  * @Author -aparajita.
+ */
+
 
 public class Pipe {
-
 
     public static void main(String[] args) throws IOException {
         String input = args[0];
@@ -35,18 +41,18 @@ public class Pipe {
         boolean flag = true;
         for (int i = 2; i < str.length; i++) {
             String s1 = str[i];
-            if(s1.equals("sort")) {
+            if (s1.equals("sort")) {
                 result = sort(list);
                 list = result;
-            }else if (s1.equals("uniq")) {
+            } else if (s1.equals("uniq")) {
                 result = unique(list);
                 list = result;
-            }else if (s1.equals("wc")) {
+            } else if (s1.equals("wc")) {
                 wcWithCat(list);
                 flag = false;
             }
         }
-        if(flag) {
+        if (flag) {
             for (String string : list) {
                 System.out.println(string);
             }
@@ -104,7 +110,7 @@ public class Pipe {
 
     public static void wcWithCat(List<String> list) throws IOException {
 
-        int countOfWord =0;
+        int countOfWord = 0;
         int charCount = 0;
         for (String word : list) {
             String[] words = word.split("\\s+");

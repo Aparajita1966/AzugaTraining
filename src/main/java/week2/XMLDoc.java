@@ -10,17 +10,22 @@ import javax.xml.parsers.DocumentBuilderFactory;
 import javax.xml.parsers.ParserConfigurationException;
 import java.util.ArrayList;
 
+/*
+ * Copyright (c) 2022.  - All Rights Reserved
+ *  * Unauthorized copying or redistribution of this file in source and binary forms via any medium
+ *  * is strictly prohibited-
+ *  * @Author -aparajita.
+ */
+
 public class XMLDoc {
 
     /**
-     *
-     * @param XMLelements ArrayList of CSV Values
+     * @param xmlElements ArrayList of CSV Values
      * @param elementName Name fixed for node tree
      * @return Final doc
-     * @throws ParserConfigurationException
      */
-    public Document docBuilder(ArrayList<String[]> XMLelements, String elementName) throws ParserConfigurationException {
-        if (elementName == null){
+    public Document docBuilder(ArrayList<String[]> xmlElements, String elementName) throws ParserConfigurationException {
+        if (elementName == null) {
             elementName = "element";
         }
         DocumentBuilderFactory xmlFactory = DocumentBuilderFactory.newInstance();
@@ -29,14 +34,14 @@ public class XMLDoc {
 
         Element rootElement = xmlDoc.createElement("root");
         xmlDoc.appendChild(rootElement);
-        Element mainElement = xmlDoc.createElement(elementName+"s");
+        Element mainElement = xmlDoc.createElement(elementName + "s");
         rootElement.appendChild(mainElement);
 
         boolean headerDefined = false;
-        String[] header = new String[XMLelements.size()];
+        String[] header = new String[xmlElements.size()];
 
         //DOC Generation -> XML Generation of every ELEMENT
-        for (String[] node : XMLelements) {
+        for (String[] node : xmlElements) {
             if (headerDefined) {
                 Element nodesElements = xmlDoc.createElement(elementName);
                 mainElement.appendChild(nodesElements);
@@ -48,7 +53,7 @@ public class XMLDoc {
                         nodesElements.appendChild(nodesValues);
                         Text nodeTxt = xmlDoc.createTextNode(node[j]);
                         nodesValues.appendChild(nodeTxt);
-                    }catch (Exception e){
+                    } catch (Exception e) {
                         System.out.println(node[j]);
                         System.out.println(header[j]);
                     }
@@ -60,12 +65,9 @@ public class XMLDoc {
                 header = node;
                 for (int j = 0; j < node.length; j++) {
                     header[j] = header[j].replaceAll("[^a-zA-Z0-9]", StringUtils.EMPTY);
-                    //Avoid a fullint
-                    try {
-                        Integer.parseInt(header[j]);
-                        header[j] = "node" + header[j];
-                    } catch (NumberFormatException e) {
-                    }
+
+                    header[j] = "node" + header[j];
+
                 }
                 headerDefined = true;
             }

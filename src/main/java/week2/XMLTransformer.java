@@ -8,18 +8,18 @@ import javax.xml.transform.TransformerException;
 import javax.xml.transform.TransformerFactory;
 import javax.xml.transform.dom.DOMSource;
 import javax.xml.transform.stream.StreamResult;
-import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
 
+/*
+ * Copyright (c) 2022.  - All Rights Reserved
+ *  * Unauthorized copying or redistribution of this file in source and binary forms via any medium
+ *  * is strictly prohibited-
+ *  * @Author -aparajita.
+ */
+
 public class XMLTransformer {
-    /**
-     * Transforms DOC Data to XML Format
-     *
-     * @param xmlDoc
-     * @param xmlFile
-     * @throws TransformerException
-     */
+
     public static void transformDocToFile(Document xmlDoc, String xmlFile) throws TransformerException {
         TransformerFactory xmlTransformerFactory = TransformerFactory.newInstance();
         Transformer xmlTransformer = xmlTransformerFactory.newTransformer();
@@ -29,7 +29,7 @@ public class XMLTransformer {
         xmlTransformer.setOutputProperty("{http://xml.apache.org/xslt}indent-amount", "4");
         FileOutputStream outputStream = null;
         try {
-            outputStream = new FileOutputStream((new File(xmlFile)));
+            outputStream = new FileOutputStream((xmlFile));
         } catch (FileNotFoundException e) {
             e.printStackTrace();
         }

@@ -37,6 +37,9 @@ The whole project is divided into weekly tasks and are as follows:
 
 - [Week 1](https://github.com/Aparajita1966/AzugaTraining/tree/Week1) :
           Week 1's aim was to imitate the behaviour of CLI commands such as pwd, date, cd, mkdir, pipe, and so on.
+          
+ The tasks from Weeks 1 and 2 are unrelated, and the former was completed to help learn how CLI commands are used in programming.        
+ All tasks are interrelated from Week 2 until the end.
    
 - [Week 2](https://github.com/Aparajita1966/AzugaTraining/tree/Week2) :
          Week 2's tasks included retrieving data from RestAPIs and generating CSV and other file extensions from the data retrieved from an API. Meaningful charts were also suggested to be generated from the data obtained. The API used for the preceding task is detailed in the following section.

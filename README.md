@@ -36,7 +36,11 @@ Install my-project using terminal
 The whole project is divided into weekly tasks and are as follows:
 
 - [Week 1](https://github.com/Aparajita1966/AzugaTraining/tree/Week1)
+      Week 1's aim was to imitate the behaviour of CLI commands such as pwd, date, cd, mkdir, pipe, and so on.
+   
 - [Week 2](https://github.com/Aparajita1966/AzugaTraining/tree/Week2)
+      
+
 - [Week 3](https://github.com/Aparajita1966/AzugaTraining/tree/Week3_Week4)
 
 

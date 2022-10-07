@@ -9,7 +9,8 @@ This repository contains Java codes for various scenarios and was created during
 
 ## Authors
 
-- [@Aparajita1966](https://github.com/Aparajita1966/AzugaTraining)
+- [@Aparajita1966](https://github.com/Aparajita1966/AzugaTraining)       
+
 
 
 ## Requirements
@@ -34,5 +35,9 @@ Install my-project using terminal
 
 The whole project is divided into weekly tasks and are as follows:
 
-- Week 1
+- [Week 1](https://github.com/Aparajita1966/AzugaTraining/tree/Week1)
+- [Week 2](https://github.com/Aparajita1966/AzugaTraining/tree/Week2)
+- [Week 3](https://github.com/Aparajita1966/AzugaTraining/tree/Week3_Week4)
+
+
 

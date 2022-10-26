@@ -1,0 +1,69 @@
+00:45:56.990 [main] INFO  week2.utility.HttpClient - Calling URL : https://collectionapi.metmuseum.org/public/collection/v1/objects/25
+00:45:58.380 [main] INFO  week2.utility.HttpClient - Response code : 200
+00:45:58.383 [main] INFO  week2.utility.HttpClient - JSON String Result {"objectID":25,"isHighlight":false,"accessionNumber":"16.74.34","accessionYear":"1916","isPublicDomain":false,"primaryImage":"","primaryImageSmall":"","additionalImages":[],"constituents":null,"department":"The American Wing","objectName":"Centavos","title":"Coin, 10 Centavos","culture":"Mexican","period":"","dynasty":"","reign":"","portfolio":"","artistRole":"","artistPrefix":"","artistDisplayName":"","artistDisplayBio":"","artistSuffix":"","artistAlphaSort":"","artistNationality":"","artistBeginDate":"","artistEndDate":"","artistGender":"","artistWikidata_URL":"","artistULAN_URL":"","objectDate":"1860–70","objectBeginDate":1860,"objectEndDate":1870,"medium":"Nickel","dimensions":"Diam. 3/4 in. (1.9 cm)","measurements":[{"elementName":"Other","elementDescription":"Object diameter","elementMeasurements":{"Diameter":1.905}}],"creditLine":"Gift of Mrs. Russell Sage, 1916","geographyType":"Made in","city":"","state":"","county":"","country":"Mexico","region":"","subregion":"","locale":"","locus":"","excavation":"","river":"","classification":"","rightsAndReproduction":"","linkResource":"","metadataDate":"2021-04-06T04:41:04.967Z","repository":"Metropolitan Museum of Art, New York, NY","objectURL":"https://www.metmuseum.org/art/collection/search/25","tags":null,"objectWikidata_URL":"","isTimelineWork":false,"GalleryNumber":""}
+00:45:58.388 [main] INFO  database.service.MuseumServiceImpl - Adding object data to database
+00:45:58.390 [main] INFO  database.jdbc.DatabaseConnection - Establishing connection with database..
+00:45:58.390 [main] DEBUG database.jdbc.DatabaseConnection - Records found: 1
+00:45:58.390 [main] DEBUG database.jdbc.DatabaseConnection - Records found: 2
+00:45:58.390 [main] DEBUG database.jdbc.DatabaseConnection - Records found: 3
+00:45:58.390 [main] DEBUG database.jdbc.DatabaseConnection - Records found: 4
+00:45:58.390 [main] DEBUG database.jdbc.DatabaseConnection - Records found: 5
+00:45:58.390 [main] DEBUG database.jdbc.DatabaseConnection - Records found: 6
+00:45:58.390 [main] DEBUG database.jdbc.DatabaseConnection - Records found: 7
+00:45:58.390 [main] DEBUG database.jdbc.DatabaseConnection - Records found: 8
+00:45:58.390 [main] DEBUG database.jdbc.DatabaseConnection - Records found: 9
+00:45:58.390 [main] DEBUG database.jdbc.DatabaseConnection - Records found: 10
+00:45:58.391 [main] DEBUG database.jdbc.DatabaseConnection - Records found: 11
+00:45:58.391 [main] DEBUG database.jdbc.DatabaseConnection - Records found: 12
+00:45:58.391 [main] DEBUG database.jdbc.DatabaseConnection - Records found: 13
+00:45:58.391 [main] DEBUG database.jdbc.DatabaseConnection - Records found: 14
+00:45:58.391 [main] DEBUG database.jdbc.DatabaseConnection - Records found: 15
+00:45:58.391 [main] DEBUG database.jdbc.DatabaseConnection - Records found: 16
+00:45:58.391 [main] DEBUG database.jdbc.DatabaseConnection - Records found: 17
+00:45:58.391 [main] DEBUG database.jdbc.DatabaseConnection - Records found: 18
+00:45:58.391 [main] DEBUG database.jdbc.DatabaseConnection - Records found: 19
+00:45:58.391 [main] DEBUG database.jdbc.DatabaseConnection - Records found: 20
+00:45:58.391 [main] DEBUG database.jdbc.DatabaseConnection - Records found: 21
+00:45:58.391 [main] DEBUG database.jdbc.DatabaseConnection - Records found: 22
+00:45:58.391 [main] DEBUG database.jdbc.DatabaseConnection - Records found: 23
+00:45:58.391 [main] DEBUG database.jdbc.DatabaseConnection - Records found: 24
+00:45:58.391 [main] DEBUG database.jdbc.DatabaseConnection - Records found: 25
+00:45:58.391 [main] DEBUG database.jdbc.DatabaseConnection - Records found: 26
+00:45:58.391 [main] DEBUG database.jdbc.DatabaseConnection - Records found: 27
+00:45:58.391 [main] DEBUG database.jdbc.DatabaseConnection - Records found: 28
+00:45:58.391 [main] DEBUG database.jdbc.DatabaseConnection - Records found: 29
+00:45:58.391 [main] DEBUG database.jdbc.DatabaseConnection - Records found: 30
+00:45:58.391 [main] DEBUG database.jdbc.DatabaseConnection - Records found: 31
+00:45:58.391 [main] DEBUG database.jdbc.DatabaseConnection - Records found: 32
+00:45:58.392 [main] DEBUG database.jdbc.DatabaseConnection - Records found: 33
+00:45:58.392 [main] DEBUG database.jdbc.DatabaseConnection - Records found: 34
+00:45:58.392 [main] DEBUG database.jdbc.DatabaseConnection - Records found: 35
+00:45:58.392 [main] DEBUG database.jdbc.DatabaseConnection - Records found: 36
+00:45:58.392 [main] DEBUG database.jdbc.DatabaseConnection - Records found: 37
+00:45:58.392 [main] DEBUG database.jdbc.DatabaseConnection - Records found: 38
+00:45:58.392 [main] DEBUG database.jdbc.DatabaseConnection - Records found: 39
+00:45:58.392 [main] DEBUG database.jdbc.DatabaseConnection - Records found: 40
+00:45:58.392 [main] DEBUG database.jdbc.DatabaseConnection - Records found: 41
+00:45:58.392 [main] DEBUG database.jdbc.DatabaseConnection - Records found: 42
+00:45:58.392 [main] DEBUG database.jdbc.DatabaseConnection - Records found: 43
+00:45:58.392 [main] DEBUG database.jdbc.DatabaseConnection - Records found: 44
+00:45:58.392 [main] DEBUG database.jdbc.DatabaseConnection - Records found: 45
+00:45:58.392 [main] DEBUG database.jdbc.DatabaseConnection - Records found: 46
+00:45:58.392 [main] DEBUG database.jdbc.DatabaseConnection - Records found: 47
+00:45:58.392 [main] DEBUG database.jdbc.DatabaseConnection - Records found: 48
+00:45:58.392 [main] DEBUG database.jdbc.DatabaseConnection - Records found: 49
+00:45:58.392 [main] DEBUG database.jdbc.DatabaseConnection - Records found: 50
+00:45:58.392 [main] DEBUG database.jdbc.DatabaseConnection - Records found: 51
+00:45:58.392 [main] DEBUG database.jdbc.DatabaseConnection - Records found: 52
+00:45:58.392 [main] DEBUG database.jdbc.DatabaseConnection - Records found: 53
+00:45:58.504 [main] INFO  database.jdbc.DatabaseConnection - INSERT_SQL query : INSERT INTO objects( artistDisplayName , country , objectDate , geographyType , objectURL , isHighlight , reign , county , objectEndDate , artistGender , repository , dynasty , portfolio , excavation , state , artistAlphaSort , period , primaryImage , subregion , classification , objectWikidata_URL , isTimelineWork , accessionYear , region , primaryImageSmall , isPublicDomain , artistSuffix , city , linkResource , artistPrefix , artistWikidata_URL , medium , title , locale , accessionNumber , artistEndDate , rightsAndReproduction , metadataDate , creditLine , artistRole , department , additionalImages , GalleryNumber , objectBeginDate , artistBeginDate , artistULAN_URL , culture , artistNationality , objectName , artistDisplayBio , locus , river , objectID , dimensions) VALUES ('' , 'Mexico' , '1860–70' , 'Made in' , 'https://www.metmuseum.org/art/collection/search/25' , 'false' , '' , '' , '1870' , '' , 'Metropolitan Museum of Art; New York; NY' , '' , '' , '' , '' , '' , '' , '' , '' , '' , '' , 'false' , '1916' , '' , '' , 'false' , '' , '' , '' , '' , '' , 'Nickel' , 'Coin; 10 Centavos' , '' , '16.74.34' , '' , '' , '2021-04-06T04:41:04.967Z' , 'Gift of Mrs. Russell Sage; 1916' , '' , 'The American Wing' , '[]' , '' , '1860' , '' , '' , 'Mexican' , '' , 'Centavos' , '' , '' , '' , '25' , 'Diam. 3/4 in. (1.9 cm)');
+00:45:58.509 [main] ERROR d.controller.MuseumAPIController - Exception occurred while connecting to the database
+java.sql.SQLSyntaxErrorException: Unknown column 'isHighlight' in 'field list'
+	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:120) ~[mysql-connector-java-8.0.30.jar:8.0.30]
+	at com.mysql.cj.jdbc.exceptions.SQLExceptionsMapping.translateException(SQLExceptionsMapping.java:122) ~[mysql-connector-java-8.0.30.jar:8.0.30]
+	at com.mysql.cj.jdbc.ClientPreparedStatement.executeInternal(ClientPreparedStatement.java:916) ~[mysql-connector-java-8.0.30.jar:8.0.30]
+	at com.mysql.cj.jdbc.ClientPreparedStatement.execute(ClientPreparedStatement.java:354) ~[mysql-connector-java-8.0.30.jar:8.0.30]
+	at database.jdbc.DatabaseConnection.insertObject(DatabaseConnection.java:52) ~[main/:na]
+	at database.service.MuseumServiceImpl.addMuseum(MuseumServiceImpl.java:49) ~[main/:na]
+	at database.controller.MuseumAPIController.addMuseum(MuseumAPIController.java:45) ~[main/:na]
+	at database.controller.MuseumAPIController.main(MuseumAPIController.java:29) ~[main/:na]

@@ -26,10 +26,10 @@ public class BasketBallApiController {
 
     public static void basketBallApi(boolean sendIndividualZipFile) throws JSONException {
         LOGGER.info("Calling BasketBall API");
-        getPlayersData(sendIndividualZipFile);
+        //getPlayersData(sendIndividualZipFile);
         //getPlayerData(sendIndividualZipFile, 1);
-        getTeamsData(sendIndividualZipFile);
-        getGamesData(sendIndividualZipFile,"", "", true);
+        //getTeamsData(sendIndividualZipFile);
+        //getGamesData(sendIndividualZipFile,"", "", true);
     }
 
     public static String getGamesData(boolean sendIndividualZipFile,String urlAppend, String range, Boolean flag) throws JSONException {

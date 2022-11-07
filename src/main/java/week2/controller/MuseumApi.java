@@ -45,7 +45,7 @@ public class MuseumApi {
         return jsonObject;
     }
 
-    public static void getMuseumDepartmentData() throws JSONException {
+    public static void getMuseumDepartmentData() throws JSONException, IOException {
         String response = HttpClient.sendGET(BASE_URL + DEPARTMENTS_URL);
         if (null != response) {
             response = response.replace(", ", "; ");
@@ -54,7 +54,7 @@ public class MuseumApi {
         }
     }
 
-    public static void getMuseumObjects() throws JSONException {
+    public static void getMuseumObjects() throws JSONException, IOException {
         String response = HttpClient.sendGET(BASE_URL + OBJECT_URL);
         if (null != response) {
             JSONArray objectIds = Utility.getAllData(response, "objectIDs");

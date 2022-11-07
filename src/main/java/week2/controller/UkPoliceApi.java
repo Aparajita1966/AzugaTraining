@@ -4,6 +4,8 @@ import org.json.JSONArray;
 import week2.utility.Convertor;
 import week2.utility.HttpClient;
 
+import java.io.IOException;
+
 /*
  * Copyright (c) 2022.  - All Rights Reserved
  *  * Unauthorized copying or redistribution of this file in source and binary forms via any medium
@@ -16,7 +18,7 @@ public class UkPoliceApi {
     private static final String FORCES_URL = "https://data.police.uk/api/forces";
     private static final String NEIGHBOUR_URL = "https://data.police.uk/api/leicestershire/neighbourhoods";
 
-    private static void getForces() {
+    private static void getForces() throws IOException {
         String response = HttpClient.sendGET(FORCES_URL);
         if (null != response) {
             JSONArray jsonObject = new JSONArray(response);
@@ -24,7 +26,7 @@ public class UkPoliceApi {
         }
     }
 
-    private static void getNeighbour() {
+    private static void getNeighbour() throws IOException {
         String response = HttpClient.sendGET(NEIGHBOUR_URL);
         if (null != response) {
             JSONArray jsonObject = new JSONArray(response);

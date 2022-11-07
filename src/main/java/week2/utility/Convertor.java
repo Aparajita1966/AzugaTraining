@@ -1,24 +1,35 @@
 package week2.utility;
 
-import org.json.JSONArray;
-
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
-import week2.constant.GeneralConstant;
-import week2.service.*;
+import java.io.File;
+import java.io.FileNotFoundException;
+import java.io.IOException;
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Properties;
 
 import javax.activation.DataHandler;
 import javax.activation.DataSource;
 import javax.activation.FileDataSource;
-import javax.mail.*;
+import javax.mail.Authenticator;
+import javax.mail.BodyPart;
+import javax.mail.Message;
+import javax.mail.MessagingException;
+import javax.mail.Multipart;
+import javax.mail.PasswordAuthentication;
+import javax.mail.Session;
+import javax.mail.Transport;
 import javax.mail.internet.InternetAddress;
 import javax.mail.internet.MimeBodyPart;
 import javax.mail.internet.MimeMessage;
 import javax.mail.internet.MimeMultipart;
-import java.io.File;
-import java.util.ArrayList;
-import java.util.List;
-import java.util.Properties;
+
+import org.json.JSONArray;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
+import week2.constant.GeneralConstant;
+import week2.service.ConverterService;
+import week2.service.ConverterServiceImpl;
 
 
 /*
@@ -33,18 +44,41 @@ public class Convertor {
     private static final Logger LOGGER = LoggerFactory.getLogger(Convertor.class);
     public static List<String> strArr = new ArrayList<>();
 
-    public static void convertFile(boolean sendIndividualZipFile, String path, JSONArray docs, boolean generateZipFile, boolean sendEmail) {
+    public static void convertFile(boolean sendIndividualZipFile, String path, JSONArray docs, boolean generateZipFile, boolean sendEmail) throws IOException {
         String filePath = "." + File.separator + "." + File.separator + "." + File.separator + "OutputFiles" + File.separator;
         File file = new File(path);
         if (file.mkdir()) {
             LOGGER.info("Path created " + file.getAbsolutePath());
         }
         ConverterService converterService = new ConverterServiceImpl();
-        converterService.convertJsonToCSV(docs, filePath + path + GeneralConstant.CSV);
-        converterService.convertToPDF(filePath + path + GeneralConstant.CSV, filePath + path + ".pdf");
-        converterService.convertToXls(filePath + path + GeneralConstant.CSV, filePath + path + ".xls");
-        converterService.convertToHtml(filePath + path + GeneralConstant.CSV, filePath + path + ".html");
-        converterService.convertToXML(filePath + path + GeneralConstant.CSV, filePath + path + ".xml");
+        try {
+			converterService.convertJsonToCSV(docs, filePath + path + GeneralConstant.CSV);
+		} catch (IOException e) {
+			LOGGER.info("Exception occured while creating CSV file " + filePath + path + GeneralConstant.CSV);
+			throw new IOException("Json not found");
+		}
+        try {
+			converterService.convertToPDF(filePath + path + GeneralConstant.CSV, filePath + path + ".pdf");
+		} catch (FileNotFoundException e2) {
+			LOGGER.info("Exception occured while creating PDF file " + filePath + path + GeneralConstant.CSV); 
+
+		}
+        try {
+			converterService.convertToXls(filePath + path + GeneralConstant.CSV, filePath + path + ".xls");
+		} catch (IOException e1) {
+			LOGGER.info("Exception occured while creating XLS file " + filePath + path + GeneralConstant.CSV); 
+		}
+        try {
+			converterService.convertToHtml(filePath + path + GeneralConstant.CSV, filePath + path + ".html");
+		} catch (IOException e) {
+			LOGGER.info("Exception occured while creating HTML file " + filePath + path + GeneralConstant.CSV); 
+		}
+        try {
+			converterService.convertToXML(filePath + path + GeneralConstant.CSV, filePath + path + ".xml");
+		} catch (IOException e) {
+			LOGGER.info("Exception occured while creating XML file " + filePath + path + GeneralConstant.CSV); 
+
+		}
         String zipFile = generateZipAndUnzipFolder(path, generateZipFile, filePath);
         if (sendIndividualZipFile) {
             strArr = new ArrayList<>();

@@ -9,6 +9,7 @@ import org.slf4j.LoggerFactory;
 import week2.service.ChartService;
 import week2.service.ChartServiceImpl;
 
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -16,7 +17,7 @@ public class BasketBallChartController {
 
     private static final Logger LOGGER = LoggerFactory.getLogger(BasketBallChartController.class);
 
-    public static void basketBallChart() {
+    public static void basketBallChart() throws IOException {
         LOGGER.info("Calling BasketBall Chart");
         DefaultCategoryDataset barChartDataSet = getGamesForBarChart();
         DefaultCategoryDataset lineChartDataset = getGamesForLineChart();
@@ -32,7 +33,7 @@ public class BasketBallChartController {
     }
 
 
-    private static DefaultCategoryDataset getGamesForBarChart() {
+    private static DefaultCategoryDataset getGamesForBarChart() throws IOException {
         DefaultCategoryDataset dataset = new DefaultCategoryDataset();
         List<Integer> teamList = new ArrayList<>();
         teamList.add(1);
@@ -67,7 +68,7 @@ public class BasketBallChartController {
         return dataset;
     }
 
-    private static DefaultCategoryDataset getGamesForLineChart() {
+    private static DefaultCategoryDataset getGamesForLineChart() throws IOException {
         DefaultCategoryDataset dataset = new DefaultCategoryDataset();
         List<Integer> teamList = new ArrayList<>();
         teamList.add(4);
@@ -78,7 +79,7 @@ public class BasketBallChartController {
         return dataset;
     }
 
-    private static void dataForYears(DefaultCategoryDataset dataset, List<Integer> teamList, List<String> list) {
+    private static void dataForYears(DefaultCategoryDataset dataset, List<Integer> teamList, List<String> list) throws IOException {
         for (String range : list) {
             String[] arr = range.split("-");
             int val = Integer.parseInt(arr[0]);
@@ -93,7 +94,7 @@ public class BasketBallChartController {
         }
     }
 
-    private static void dataForMultipleYear(DefaultCategoryDataset dataset, List<Integer> teamList, List<String> list) {
+    private static void dataForMultipleYear(DefaultCategoryDataset dataset, List<Integer> teamList, List<String> list) throws IOException {
         for (String range : list) {
             StringBuilder urlApp = new StringBuilder();
             String[] arr = range.split("-");
@@ -112,7 +113,7 @@ public class BasketBallChartController {
         }
     }
 
-    private static DefaultPieDataset getGamesForPieChart() {
+    private static DefaultPieDataset getGamesForPieChart() throws IOException {
         DefaultPieDataset dataset = new DefaultPieDataset();
         List<String> list = new ArrayList<>();
         list.add("1971-1980");

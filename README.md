@@ -3,7 +3,7 @@
 
 Hello and welcome to my Java training notes.
 
-This repository contains Java codes for various scenarios and was created during Azuga's training phase under the direction of CodeOps. The codes were written over the course of four weeks and are available on the Github repository. They will be available for future referencing and upgrades. Any and all contributions are welcome.
+This repository contains Java codes for various scenarios and was created during Azuga's Month 1 training under the direction of CodeOps. The codes were written over the course of four weeks and are available on the Github repository. They will be available for future referencing and upgrades. Any and all contributions are welcome.
 
 
 
@@ -50,7 +50,7 @@ The whole project is divided into weekly tasks and are as follows:
       
 ## API Reference
 
-## - BasketBall API
+## - 1. BasketBall API
 
 #### Get all players
 
@@ -76,11 +76,29 @@ The whole project is divided into weekly tasks and are as follows:
 ```http
   GET https://www.balldontlie.io/api/v1/season_averages?season=2018&player_ids[]=1&player_ids[]=2
 ```  
+
+## - 2. Museum API
+
+#### Get all objects
+
+```http
+  GET https://collectionapi.metmuseum.org/public/collection/v1/objects
+```  
+
+#### Get details of an object
+
+```http
+  GET https://collectionapi.metmuseum.org/public/collection/v1/objects/objectID
+```  
+
+
  ## - Documentation
 
 Go through the attatched API documentation carefully before advancing
 
 [BASKETBALL API - Documentation](https://www.balldontlie.io/#introduction)
+
+[METROPOLITAN MUSEUM API - Documentation](https://metmuseum.github.io/)
 
 ## Used By
 
@@ -94,7 +112,7 @@ This project is used by:
 
 Java_Project is licensed under the [AZUGA_TELEMATICS](https://www.azuga.com/) 
 
-Using : [Java 18 ](https://www.java.com/en/)
+Using : [Java 11](https://www.java.com/en/)
 
 
 ###
@@ -123,5 +141,7 @@ Thank You
     implementation group: 'jfree', name: 'jfreechart', version: '1.0.13'
    - // https://mvnrepository.com/artifact/org.apache.commons/commons-lang3
     implementation group: 'org.apache.commons', name: 'commons-lang3', version: '3.12.0'
+    
+    NOTE: The other required dependencies are present in the build.gradle file of each branch
 
 

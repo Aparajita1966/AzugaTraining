@@ -9,6 +9,8 @@ import week2.utility.Convertor;
 import week2.utility.HttpClient;
 import week2.utility.Utility;
 
+import java.io.IOException;
+
 /*
  * Copyright (c) 2022.  - All Rights Reserved
  *  * Unauthorized copying or redistribution of this file in source and binary forms via any medium
@@ -26,13 +28,13 @@ public class BasketBallApiController {
 
     public static void basketBallApi(boolean sendIndividualZipFile) throws JSONException {
         LOGGER.info("Calling BasketBall API");
-        getPlayersData(sendIndividualZipFile);
+        //getPlayersData(sendIndividualZipFile);
         //getPlayerData(sendIndividualZipFile, 1);
-        getTeamsData(sendIndividualZipFile);
-        getGamesData(sendIndividualZipFile,"", "", true);
+        //getTeamsData(sendIndividualZipFile);
+        //getGamesData(sendIndividualZipFile,"", "", true);
     }
 
-    public static String getGamesData(boolean sendIndividualZipFile,String urlAppend, String range, Boolean flag) throws JSONException {
+    public static String getGamesData(boolean sendIndividualZipFile,String urlAppend, String range, Boolean flag) throws JSONException, IOException {
         String response = HttpClient.sendGET(BASE_URL + GAMES_URL + urlAppend);
         if (null != response) {
             if (flag) {
@@ -43,7 +45,7 @@ public class BasketBallApiController {
         return response;
     }
 
-    public static void getPlayersData(boolean sendIndividualZipFile) throws JSONException {
+    public static void getPlayersData(boolean sendIndividualZipFile) throws JSONException, IOException {
         String response = HttpClient.sendGET(BASE_URL + PLAYERS_URL);
         LOGGER.debug("Response for getPlayersData method : " + response);
         if (null != response) {
@@ -52,7 +54,7 @@ public class BasketBallApiController {
         }
     }
 
-    public static void getTeamsData(boolean sendIndividualZipFile) throws JSONException {
+    public static void getTeamsData(boolean sendIndividualZipFile) throws JSONException, IOException {
         String response = HttpClient.sendGET(BASE_URL + TEAMS_URL);
         if (null != response) {
             JSONArray docs = Utility.getAllData(response, "data");
@@ -60,7 +62,7 @@ public class BasketBallApiController {
         }
     }
 
-    public static void getPlayerData(boolean sendIndividualZipFile, Integer id) throws JSONException {
+    public static void getPlayerData(boolean sendIndividualZipFile, Integer id) throws JSONException, IOException {
         String response = HttpClient.sendGET(BASE_URL + PLAYERS_URL + "/" + id);
         if (null != response) {
             JSONArray docs = Utility.getUniqueData(response);

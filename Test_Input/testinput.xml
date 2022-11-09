@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<root>
+    <elements>
+        <element>
+            <nodename>John Doe</nodename>
+            <nodescore>98</nodescore>
+            <nodemajor>Agricultural studies</nodemajor>
+            <nodeinstitution>Harvard University</nodeinstitution>
+        </element>
+        <element>
+            <nodename>Sam Adams</nodename>
+            <nodescore>87</nodescore>
+            <nodemajor>Biology</nodemajor>
+            <nodeinstitution>Dartmouth College</nodeinstitution>
+        </element>
+        <element>
+            <nodename>James Isner</nodename>
+            <nodescore>100</nodescore>
+            <nodemajor>Computer Science</nodemajor>
+            <nodeinstitution>MIT</nodeinstitution>
+        </element>
+        <element>
+            <nodename>George Orwell</nodename>
+            <nodescore>99</nodescore>
+            <nodemajor>English Literature</nodemajor>
+            <nodeinstitution>Eton College</nodeinstitution>
+        </element>
+        <element>
+            <nodename>Patrick Chang</nodename>
+            <nodescore>93</nodescore>
+            <nodemajor>Computer Science</nodemajor>
+            <nodeinstitution>National University of Singapore</nodeinstitution>
+        </element>
+        <element>
+            <nodename>Ajay Babu</nodename>
+            <nodescore>92</nodescore>
+            <nodemajor>Computer Science</nodemajor>
+            <nodeinstitution>National University of Singapore</nodeinstitution>
+        </element>
+    </elements>
+</root>

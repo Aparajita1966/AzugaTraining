@@ -18,15 +18,8 @@ public class XMLCreators {
 
     public static ArrayList<String[]> CSVtoArrayList(String csvFile, String csvSplit) throws IOException {
         ArrayList<String[]> elements = new ArrayList<>();
-        BufferedReader csvReader = null;
+        BufferedReader csvReader = new BufferedReader(new FileReader(csvFile));
         String line;
-
-        try {
-            csvReader = new BufferedReader(new FileReader(csvFile));
-        } catch (FileNotFoundException e) {
-            e.printStackTrace();
-        }
-
         while ((line = Objects.requireNonNull(csvReader).readLine()) != null) {
             String[] nodes = line.split(csvSplit);
             elements.add(nodes);
